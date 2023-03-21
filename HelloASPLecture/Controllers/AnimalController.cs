@@ -6,9 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HelloASPLecture.Controllers
 {
+    [Route("/animal")]
     public class AnimalController : Controller
     {
-        [HttpGet("/animal")]
+        [HttpGet]
         // GET: /<controller>/
         public IActionResult Index()
         {
@@ -23,8 +24,8 @@ namespace HelloASPLecture.Controllers
         }
 
         // GET & POST: /controller/feature
-        [HttpGet("/animal/feature")]
-        [HttpPost("/animal/feature")]
+        [HttpGet("feature/{name?}/{species?}/{quirk?}")]
+        [HttpPost("feature")]
         public IActionResult ShowOff(string name = "Bananya", string species = "Banana Cat", string quirk = "Very yellow")
         {
             string html = "<h1>AND HERE'S THE STAR OF THE SHOW</h1>" +

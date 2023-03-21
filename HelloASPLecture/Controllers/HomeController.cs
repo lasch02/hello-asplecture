@@ -13,9 +13,10 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+    //GET: localhose:[port#]
     public IActionResult Index()
     {
-        return View();
+        return View();  //returns a template of what you see on the website. Y
     }
 
     public IActionResult Privacy()

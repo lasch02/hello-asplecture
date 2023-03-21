@@ -11,6 +11,7 @@ namespace HelloASPLecture.Controllers
     {
         [HttpGet]
         // GET: /<controller>/
+        // localhost:XXXX/animal
         public IActionResult Index()
         {
             string form = "<h1>SUBMIT YOUR ANIMAL HERE</h1>" +
@@ -25,7 +26,8 @@ namespace HelloASPLecture.Controllers
 
         // GET & POST: /controller/feature
         [HttpGet("feature/{name?}/{species?}/{quirk?}")]
-        [HttpPost("feature")]
+        [HttpPost("feature")]  //if I am accepting information from a form, I need the HTTP POst request
+        //localhost:XXXX/animal/feature
         public IActionResult ShowOff(string name = "Bananya", string species = "Banana Cat", string quirk = "Very yellow")
         {
             string html = "<h1>AND HERE'S THE STAR OF THE SHOW</h1>" +
